@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+		canvas{
+			display: block;
+			background: black;
+		}
+		.demo-wrap{
+			position: fixed;
+			display: flex;
+			box-sizing: border-box;
+			top: 0;
+			left: 50%;
+			width: 300px;
+			height: 50px;
+			padding: 15px;
+			justify-content: center;
+			align-items: center;
+			margin-left: -100px;
+			border-radius: 4px;
+			background: rgba(255, 255, 255,.5)
+		}
+		.demo-wrap input{
+			border: none;
+			outline: none;
+			width: 80%;
+			height: 22px;
+		}
+		.demo-wrap button{
+			width: 16%;
+			height: 22px;
+			margin-left: 4%;
+			padding: 2px 4px;
+			border: none;
+			outline: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="demo-wrap">
+		<input type="text" class="J-text" placeholder="输入要测试的文字">
+		<button class="J-btn">发射</button>
+	</div>
+	<script src="https://cdn.bootcss.com/dynamics.js/1.1.5/dynamics.js"></script>
+	<script type="text/javascript" src="./js/utils.js"></script>
+	<script type="text/javascript" src="./js/ball.js"></script>
+	<script type="text/javascript" src="./js/app.js"></script>
+	<script>
+		var drop = new DropCanvas({ballNum:2000});
+		var text = document.getElementsByClassName('J-text')[0];
+		var btn = document.getElementsByClassName('J-btn')[0];
+		addEvent(btn,'click',function(){
+			drop.showText = text.value;
+			drop.getTextStyle();
+			text.value = ''
+		})
+		// var arr = ['哈哈哈','喔喔']
+		// var count = 0;
+		// setInterval(function(){
+		// 	// for(var i = 0; i < arr.length;i++){
+		// 		drop.showText = arr[count];
+		// 		drop.getTextStyle();
+		// 		count++;
+		// 	// }
+		// },8000)
+		
+	</script>
+</body>
+</html>
