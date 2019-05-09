@@ -1,7 +1,7 @@
 function Ball(option) {
 	this.maxWidth = option.maxWidth;
 	this.maxHeight = option.maxHeight;
-	this.size = this.randomNum(3, 1);
+	this.size = this.randomNum(option.size.max, option.size.min);
 	this.ctx = ctx;
 	this.color = this.getBallColor();
 	this.x = option.x || this.randomNum(this.size, this.maxWidth - this.size);
