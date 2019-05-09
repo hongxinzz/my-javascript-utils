@@ -34,4 +34,6 @@ var drop = new DropCanvas({
 ```
 ### Demo
 ![初始化](https://raw.githubusercontent.com/hongxinzz/my-javascript-utils/master/canvas/demo.png)
+
+
 ![有文字](https://raw.githubusercontent.com/hongxinzz/my-javascript-utils/master/canvas/text.png)
