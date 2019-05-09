@@ -48,6 +48,7 @@ DropCanvas.prototype={
 	getTextStyle:function(){
 		var that = this;
 		if(this.showText !=='' && typeof(this.showText) !== 'undefined'){
+			//获取文字默认的imgdata
 			console.log( this.initTextFont,this.iniFontFamily)
 			this.ctx.font = this.initTextFont + ' ' +this.iniFontFamily;
 			this.ctx.fillStyle = "#fff";
@@ -64,6 +65,7 @@ DropCanvas.prototype={
 
 	},
 	createBall: function () {
+		//生成球体
 		var ballNum = this.ballNum;
 		for(var i = 0; i < ballNum; i++){
 			var ball = new Ball({size:this.ballSize,maxWidth:this.iCanvasW,maxHeight:this.iCanvasH});
@@ -74,6 +76,7 @@ DropCanvas.prototype={
 		}
 	},
 	createText:function () {
+		//开始i获取imgdata的坐标值
 		var actionCount = 0;
 		var canAnimateToText = false;
 		for(var x=0; x<this.imgData.width; x += 6) {
@@ -98,6 +101,7 @@ DropCanvas.prototype={
 			}
 		}
 		if(canAnimateToText){
+			//获取之后开始执行例子到指定的X，Y轴
 			this.animateToText()
 		}
 	},
@@ -117,6 +121,7 @@ DropCanvas.prototype={
 			}
 		}
 		setTimeout(function(){
+			// 三秒之后回到点位
 			that.ballBack();
 		},3000);
 	},
@@ -140,11 +145,13 @@ DropCanvas.prototype={
 		}
 	},
 	draw:function(){
+		//绘制每一颗小球
 		for(var i = 0;i < this.ballList.length;i++){
-			this.ballList[i].dropBall()
+			this.ballList[i].drawBall()
 		}
 	},
 	updateBall:function () {
+		//不停地重复
 		var that = this;
 		this.ctx.clearRect(0, 0, this.iCanvasW, this.iCanvasH);
 		this.draw();
