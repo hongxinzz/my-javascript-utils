@@ -14,7 +14,7 @@ var requestAnimFrame =
 	};
 var cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
 function DropCanvas(option) {
-	this.ballNum = option.ballNum; //小球个数
+	this.ballNum = option.ballNum || 1000; //小球个数
 	this.ballList = []; //小球数组
 	this.animte = null; //动画
 	this.showTextColor = option.showTextColor || ''; //文字颜色
