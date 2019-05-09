@@ -1,6 +1,6 @@
- ## canvas做的粒子动画
+ ## canvas做的粒子动画  
  
- 
+>  [Demo](https://hongxinzz.github.io/my-javascript-utils/canvas/canvas.html)
  
  ### API
  DropCanvas(opts)
@@ -32,3 +32,8 @@ var drop = new DropCanvas({
 				minSize:1
 			});
 ```
+### Demo
+![初始化](https://raw.githubusercontent.com/hongxinzz/my-javascript-utils/master/canvas/demo.png)
+
+
+![有文字](https://raw.githubusercontent.com/hongxinzz/my-javascript-utils/master/canvas/text.png)
