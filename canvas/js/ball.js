@@ -38,7 +38,7 @@ Ball.prototype = {
 		}else if(this.x <=0){
 			this.speedX = Math.abs(this.speedX)
 		}
-		if(this.y >= this.maxWidth - this.size){
+		if(this.y >= this.maxHeight - this.size){
 			this.speedY = -this.speedY
 		}else if(this.y <=0){
 			this.speedY =  Math.abs(this.speedY);
