@@ -41,13 +41,14 @@
 			height: 22px;
 		}
 		.demo-wrap button{
-			width: 78px;
 			height: 22px;
 			margin-left: 4%;
 			padding: 2px 4px;
-			border: none;
 			outline: none;
 			cursor: pointer;
+			color:#fff;
+			background-color: #1890ff;
+			border:1px solid #1890ff;
 		}
 	</style>
 </head>
@@ -55,6 +56,7 @@
 <div class="demo-wrap">
 	<input type="text" class="J-text" placeholder="输入要测试的文字">
 	<button class="J-btn">GOGOGO!</button>
+	<button class="J-gitHub">查看更多功能</button>
 </div>
 <script src="https://cdn.bootcss.com/dynamics.js/1.1.5/dynamics.js"></script>
 <script type="text/javascript" src="./js/utils.js"></script>
@@ -62,17 +64,20 @@
 <script type="text/javascript" src="./js/app.js"></script>
 <script>
 	var drop = new DropCanvas({ballNum:2000});
-	var testArr = [{showText:'我是默认的'},{showTextColor:'#ed4040',showText:'我是自定义字体',initTextFont:'100px',iniFontFamily:'Arial'}]
-	// showTextColor:'#ed4040',showText:'哈哈哈哈',initTextFont:'200px',iniFontFamily:'Arial',maxSize:4,minSize:1
+	var testArr = [{showText:'可以是默认的'},{showTextColor:'#ed4040',showText:'也可以自定义字体',initTextFont:'100px',iniFontFamily:'Arial'}]
 	function $(el) {
 		return document.getElementsByClassName(el)[0]
 	}
 	var text = $('J-text');
 	var btn = $('J-btn');
+	var goGit = $('J-gitHub');
 	addEvent(btn,'click',function(){
 		drop.showText = text.value;
 		drop.getTextStyle();
 		text.value = ''
+	})
+	addEvent(goGit,'click',function () {
+		window.open('https://github.com/hongxinzz/my-javascript-utils/tree/master/canvas')
 	})
 	setTimeout(function () {
 		drop.showText = testArr[0].showText;
