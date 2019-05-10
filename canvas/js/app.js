@@ -117,7 +117,7 @@ DropCanvas.prototype={
 					type: dynamics.easeIn,
 					duration:1000,
 					complete:function () {
-						that.animateEnd(true)
+						//that.animateEnd(true)
 					}
 				})
 				that.ballList[i].newX = 0;
