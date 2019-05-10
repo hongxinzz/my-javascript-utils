@@ -14,19 +14,19 @@ var requestAnimFrame =
 	};
 var cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
 function DropCanvas(option) {
-	this.ballNum = option.ballNum || 1000; //小球个数
+	this.ballNum = option.ballNum; //小球个数
 	this.ballList = []; //小球数组
 	this.animte = null; //动画
 	this.showTextColor = option.showTextColor || ''; //文字颜色
-	console.log(option,'>>>option')
 	this.showText = option.showText || ''; //显示的文字
 	this.initTextFont = option.initTextFont || '180px';
-	console.log(option.initTextFont !=="")
 	this.iniFontFamily = option.iniFontFamily || 'Arial';
 	this.ballSize = {
 		max:option.maxSize || 3 ,
 		min:option.minSize || 1,
-	}
+	} //小球大小
+	this.isCanBack = option.isCanBack;
+	this.animateEnd = option.animateEnd;
 	this.init()
 }
 
@@ -38,6 +38,7 @@ DropCanvas.prototype={
 		// 设置Canvas 与父元素同宽高
 		this.iCanvasW = this.iCanvas.width = this.oWidth;
 		this.iCanvasH = this.iCanvas.height = this.oHeight;
+		this.iCanvas.className = 'dropCanvas';
 		// 获取 2d 绘画环境
 		window.ctx = this.ctx = this.iCanvas.getContext("2d");
 		// 插入到 body 元素中
@@ -49,7 +50,6 @@ DropCanvas.prototype={
 		var that = this;
 		if(this.showText !=='' && typeof(this.showText) !== 'undefined'){
 			//获取文字默认的imgdata
-			console.log( this.initTextFont,this.iniFontFamily)
 			this.ctx.font = this.initTextFont + ' ' +this.iniFontFamily;
 			this.ctx.fillStyle = "#fff";
 			this.ctx.fillRect(0, 0, this.iCanvasW, this.iCanvasH);
@@ -115,15 +115,20 @@ DropCanvas.prototype={
 				},{
 					type: dynamics.easeIn,
 					duration:1000,
+					complete:function () {
+						that.animateEnd(true)
+					}
 				})
 				that.ballList[i].newX = 0;
 				that.ballList[i].newY = 0;
 			}
 		}
-		setTimeout(function(){
-			// 三秒之后回到点位
-			that.ballBack();
-		},3000);
+		if(this.isCanBack){
+			setTimeout(function(){
+				// 三秒之后回到点位
+				that.ballBack();
+			},3000);
+		}
 	},
 	ballBack(){
 		var that = this;
