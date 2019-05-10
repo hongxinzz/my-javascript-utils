@@ -26,7 +26,8 @@ function DropCanvas(option) {
 		min:option.minSize || 1,
 	} //小球大小
 	this.isCanBack = option.isCanBack;
-	this.animateEnd = option.animateEnd;
+	this.animateEnd = option.animateEnd || function(){}; //回调函数
+	this.isCanBack = option.isCanBack  || true; //是否停止
 	this.init()
 }
 
