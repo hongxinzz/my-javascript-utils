@@ -64,7 +64,7 @@
 <script type="text/javascript" src="./js/app.js"></script>
 <script>
 	var drop = new DropCanvas({ballNum:2000});
-	var testArr = [{showText:'可以是默认的'},{showTextColor:'#ed4040',showText:'也可以自定义字体',initTextFont:'100px',iniFontFamily:'Arial'}]
+	var testArr = [{showText:'可以是默认的',animateEnd:function(){}},{showTextColor:'#ed4040',showText:'也可以自定义字体',initTextFont:'100px',iniFontFamily:'Arial',animateEnd:function(){}}]
 	function $(el) {
 		return document.getElementsByClassName(el)[0]
 	}
