@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>仿京东搜索框</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.search-wrap{
+			position: relative;
+			width: 200px;
+			height: 42px;
+			margin:200px auto;
+		}
+		.search-wrap .auto-kw{
+			position: absolute;
+			top:10px;
+			left: 4px;
+			/*z-index: -1;*/
+		}
+		.search-wrap .auto-kw.hide{
+			display: none;
+		}
+		.search-wrap .auto-kw.show{
+			display: block;
+		}
+		.search-wrap .search-input{
+			width: 100%;
+			height: 100%;
+			padding-left: 4px;
+			border: 1px solid #333;
+			outline: none;
+			z-index: 1;
+		}
+	</style>
+</head>
+<body>
+
+<div class="search-wrap">
+	<div class="auto-kw" id="J_show_kw">111</div>
+	<input type="text" class="search-input" id="J_input"/>
+	<div class="data-kw" style="display: none" id="J_data">
+		["洗衣机","台式机","冰淇淋","大薯片"]
+	</div>
+</div>
+<script src="../utils/utils.js" type="text/javascript"></script>
+<script src="js/search.js" type="text/javascript"></script>
+</body>
+</html>
