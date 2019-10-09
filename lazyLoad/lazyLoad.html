@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>懒加载</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		img{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<img src="img/loading.gif" data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2257888328,1766835145&fm=26&gp=0.jpg" alt="">
+<img src="img/loading.gif" class="z-load test" data-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570530828109&di=0b1aba43baad91caed0da83e2a436615&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201210%2F24%2F20121024114700_5JveU.jpeg" alt="">
+<img src="img/loading.gif" data-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570530828108&di=0fb0b262ae26ab69d3af16bb3eee7f1e&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2017-11-29%2F5a1e54cdc42c6.jpg" alt="">
+<img src="img/loading.gif" class="z-load test" data-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570530828108&di=078927c08be94b85f322f6a26599316a&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2017-12-01%2F5a2140712eca0.jpg" alt="">
+<img src="img/loading.gif" data-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570530828108&di=ab0829f7f6d0e84d9f620859f498d1e5&imgtype=0&src=http%3A%2F%2Fimg010.hc360.cn%2Fg6%2FM08%2F4D%2F46%2FwKhQsFPh-LGENxs9AAAAANei-wc350.jpg" alt="">
+<img src="img/loading.gif" data-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570530870678&di=d4429e8cf4fc5c3cbcce1eab0b9615ea&imgtype=jpg&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D3107358378%2C1844988855%26fm%3D214%26gp%3D0.jpg" alt="">
+
+<script src="js/lazyLoad.js"></script>
+<script>
+	// 1.用户自定义配置
+ // var lazyload = lazyLoad({
+	//  root:'.z-load',
+	//  margin:100,
+	//  dataSet:'data-src'
+ // });
+ //2.直接运行
+	lazyLoad();
+//	3.自定义 获取
+// 	var imgList = document.querySelectorAll('.test')
+// 	lazyLoad({
+// 		imgList:imgList
+// 	})
+</script>
+</body>
+</html>
