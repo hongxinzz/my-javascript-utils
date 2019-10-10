@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<form id="form">
+	<div>
+		姓名:<input type="text" name="name">
+	</div>
+	<div>
+		手机:<input type="text" name="phone">
+	</div>
+	<div>
+		邮箱:<input type="text" name="email">
+	</div>
+</form>
+<script src="js/validate.js"></script>
+<script>
+	var checkForm = checkForm(form, {
+		defaultEvent: 'change'
+	})
+</script>
+</body>
+</html>
