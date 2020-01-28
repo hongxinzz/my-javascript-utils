@@ -2,37 +2,41 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>canvas</title>
+	<title>粒子移动</title>
 	<style>
-		*{
+		* {
 			margin: 0;
 			padding: 0;
 		}
+
 		html,
 		body {
 			width: 100%;
 			height: 100%;
 		}
-		canvas{
+
+		canvas {
 			display: block;
 			background: black;
 		}
-		.demo-wrap{
+
+		.demo-wrap {
 			position: fixed;
 			display: flex;
 			box-sizing: border-box;
 			top: 0;
 			left: 50%;
-			width: 400px;
+			width: 500px;
 			height: 50px;
 			padding: 15px;
 			justify-content: center;
 			align-items: center;
 			margin-left: -200px;
 			border-radius: 4px;
-			background: rgba(255, 255, 255,.5)
+			background: rgba(255, 255, 255, .5)
 		}
-		.demo-wrap input{
+
+		.demo-wrap input {
 			flex: 1;
 			border: none;
 			outline: none;
@@ -40,15 +44,16 @@
 			margin-left: 5px;
 			height: 22px;
 		}
-		.demo-wrap button{
+
+		.demo-wrap button {
 			height: 22px;
 			margin-left: 4%;
 			padding: 2px 4px;
 			outline: none;
 			cursor: pointer;
-			color:#fff;
+			color: #fff;
 			background-color: #1890ff;
-			border:1px solid #1890ff;
+			border: 1px solid #1890ff;
 		}
 	</style>
 </head>
@@ -57,41 +62,55 @@
 	<input type="text" class="J-text" placeholder="输入要测试的文字">
 	<button class="J-btn">GOGOGO!</button>
 	<button class="J-gitHub">查看更多功能</button>
+	<button class="J-clickParticles">粒子点击爆炸效果</button>
 </div>
 <script src="https://cdn.bootcss.com/dynamics.js/1.1.5/dynamics.js"></script>
 <script type="text/javascript" src="./js/utils.js"></script>
 <script type="text/javascript" src="./js/ball.js"></script>
 <script type="text/javascript" src="./js/app.js"></script>
 <script>
-	var drop = new DropCanvas({ballNum:2000});
-	var testArr = [{showText:'可以是默认的'},{showTextColor:'#ed4040',showText:'也可以自定义字体',initTextFont:'100px',iniFontFamily:'Arial'}]
-	function $(el) {
-		return document.getElementsByClassName(el)[0]
+	var drop = new DropCanvas ({ballNum: 2000});
+	var testArr = [{showText: '可以是默认的'}, {
+		showTextColor: '#ed4040',
+		showText: '也可以自定义字体',
+		initTextFont: '100px',
+		iniFontFamily: 'Arial'
+	}]
+
+	function $ (el) {
+		return document.getElementsByClassName (el)[0]
 	}
-	var text = $('J-text');
-	var btn = $('J-btn');
-	var goGit = $('J-gitHub');
-	addEvent(btn,'click',function(){
+
+	var text = $ ('J-text'),btn = $ ('J-btn'),goGit = $ ('J-gitHub'),goClickParticles = $('J-clickParticles');
+
+	addEvent (btn, 'click', function () {
 		drop.showText = text.value;
-		drop.getTextStyle();
+		drop.getTextStyle ();
 		text.value = ''
 	})
-	addEvent(goGit,'click',function () {
-		window.open('https://github.com/hongxinzz/my-javascript-utils/tree/master/canvas')
+
+	addEvent (goGit, 'click', function () {
+		window.open ('https://github.com/hongxinzz/my-javascript-utils/tree/master/canvas')
 	})
-	setTimeout(function () {
+
+	addEvent(goClickParticles,'click',function () {
+		window.open('https://hongxinzz.github.io/my-javascript-utils/ClickParticles')
+	})
+
+	setTimeout (function () {
 		drop.showText = testArr[0].showText;
-		drop.getTextStyle();
+		drop.getTextStyle ();
 		text.value = ''
-	},1000)
-	setTimeout(function () {
+	}, 1000)
+
+	setTimeout (function () {
 		drop.showText = testArr[1].showText;
 		drop.showTextColor = testArr[1].showTextColor;
 		drop.initTextFont = testArr[1].initTextFont;
 		drop.iniFontFamily = testArr[1].iniFontFamily;
-		drop.getTextStyle();
+		drop.getTextStyle ();
 		text.value = ''
-	},6000)
+	}, 6000)
 </script>
 </body>
 </html>

@@ -2,6 +2,10 @@
  
 >  [Demo](https://hongxinzz.github.io/my-javascript-utils/canvas/canvas.html)
  
+## 点击粒子爆炸效果  
+  
+>  [Demo](https://hongxinzz.github.io/my-javascript-utils/ClickParticles)
+
  ### API
  DropCanvas(opts)
  - opts (Object), optional

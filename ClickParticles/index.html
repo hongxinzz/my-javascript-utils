@@ -2,28 +2,48 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>粒子点击爆炸</title>
 	<style>
 		*{
 			margin: 0;
 			padding: 0;
+			text-decoration: none;
 		}
-		html,body{
-			position: relative;
-			width: 100%;
-			height: 100%;
+		.tip-wrap{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 1;
 		}
-		.tip{
-			margin-top: 15px;
-			font-size: 16px;
+		.tip-wrap_text{
+			width: 80%;
+			padding: 8px 16px;
+			margin: 10px 0;
+			border-radius: 4px;
 			text-align: center;
-			color: #ed4040;
+			background-color: #fef0f0;
+			color: #f56c6c;
+		}
+		.tip-content a{
+			display: inline-block;
+			padding: 6px 10px;
+			margin-right: 15px;
+			font-weight: 500;
+			color: #fff;
+			background-color: #409eff;
+			border-color: #409eff;
+			border-radius: 4px;
 		}
 	</style>
 </head>
 <body>
-	<p class="tip">点击屏幕查看效果</p>
-
+<div class="tip-wrap">
+	<div class="tip-content">
+		<p class="tip-wrap_text">点击屏幕查看效果</p>
+		<a href="https://github.com/hongxinzz/my-javascript-utils/tree/master/ClickParticles">查看更多功能</a>
+		<a href="https://hongxinzz.github.io/my-javascript-utils/canvas/canvas.html)">粒子绘字</a>
+	</div>
+</div>
 <script src="./js/circle.js"></script>
 <script src="./js/ball.js"></script>
 <script src="./js/index.js"></script>

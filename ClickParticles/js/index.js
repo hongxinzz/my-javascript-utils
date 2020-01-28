@@ -47,6 +47,7 @@ TabParticles.prototype = {
 		canvasEl.style.position = 'fixed';
 		canvasEl.style.top = '0';
 		canvasEl.style.left = '0';
+		canvasEl.style.zIndex = '-1';
 		canvasEl.getContext ('2d').scale (1, 1);
 		document.body.appendChild (canvasEl);
 		if (!document.getElementsByClassName (this.canvasClassName)[0]) {
@@ -58,7 +59,7 @@ TabParticles.prototype = {
 	bindEvent () {
 		var that = this;
 		window.addEventListener ('mousedown', function (e) {
-			if (e.target.className === that.canvasClassName) {
+			if (e.target.className === that.canvasClassName || e.target.nodeName !== 'A' || e.target.nodeName !== 'IMG') {
 				cancelAnimationFrame (that.animte)
 				that.clickX = e.pageX;
 				that.clickY = e.pageY;
