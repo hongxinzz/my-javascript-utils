@@ -21,7 +21,7 @@ const defaule_config = {
 }
 
 const TabParticles = function (opt) {
-	const opts = Object.assign ({}, opt, defaule_config);
+	const opts = Object.assign ({}, defaule_config, opt);
 	this.colors = opts.colors;
 	this.numberOfParticles = opts.numberOfParticles;
 	this.canvasClassName = opts.canvasClassName;

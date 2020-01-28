@@ -1,6 +1,6 @@
- ## canvas做的粒子动画  
+ ## 点击粒子爆炸效果  
  
->  [Demo](https://hongxinzz.github.io/my-javascript-utils/ClickParticles/index.html)
+>  [Demo](https://hongxinzz.github.io/my-javascript-utils/ClickParticles)
  
  ### API
  TabParticles(opts)
@@ -28,4 +28,5 @@ var tabParticles = new TabParticles({
 				width:20,
 			});
 ```
-
+### Demo
+![初始化](https://raw.githubusercontent.com/hongxinzz/my-javascript-utils/master/ClickParticles/ClickParticles.gif)
