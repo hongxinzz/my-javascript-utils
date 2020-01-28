@@ -58,7 +58,7 @@ TabParticles.prototype = {
 	
 	bindEvent () {
 		var that = this;
-		window.addEventListener ('mousedown', function (e) {
+		document.addEventListener ('mousedown', function (e) {
 			if (e.target.className === that.canvasClassName || e.target.nodeName !== 'A' || e.target.nodeName !== 'IMG') {
 				cancelAnimationFrame (that.animte)
 				that.clickX = e.pageX;
